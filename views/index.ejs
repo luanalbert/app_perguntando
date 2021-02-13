@@ -7,7 +7,7 @@
     <title>Perguntas e Respostas</title>
 </head>
 <body>
-    <h1> Guia Perguntas </h1>
+    <h1> Guia Perguntas e Respostas </h1>
     <hr>
     <h3> Aqui ficaram algumas perguntas </h3>
    
@@ -15,6 +15,22 @@
     <p>Linguagem Preferida: <%= lang %></p>
     <p>Empresa: <%= empresa %></p>
     <p>Número de Inscritos: <%= inscritos%></p>
+    
+    <!--Estrutura condicional com EJS-->
+    <%if(msg == true){ %>
+        <h3>Mensagem de erro!</h3>
+    <%} else {%>
+        <h3>Nenhum erro</h3>
+    <%}%>   
+    
+    <!--Estrutura de repetição com EJS(para cada)-->  
+    <%produtos.forEach(function(produto){ %>
+        <hr>
+        <h3><%= produto.nome%> </h3>
+        <h5><%= produto.preco%> </h5>
+    <%})%>
+
+
 
 </body>
 </html>
